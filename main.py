@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 batch_size = 32
 img_height = 512
 img_width = 512
-data_dir = 'data/Augment_Dataset'  # katalog z danymi
+data_dir = 'data/augmented3'  # katalog z danymi
 
 # Podział na zbiór treningowy i walidacyjny/testowy
 # parametry 'validation_split' oraz 'subset' umożliwiają automatyczny podział
@@ -93,3 +93,6 @@ plt.show()
 # Ewaluacja modelu na zbiorze walidacyjnym (jeżeli walidacyjny traktujemy jako testowy)
 test_loss, test_acc = model.evaluate(val_ds, verbose=2)
 print("\nDokładność na zbiorze testowym:", test_acc)
+
+# Zapisanie modelu
+model.save("pomidor_model.h5")
